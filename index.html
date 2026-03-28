@@ -624,7 +624,7 @@
 <script>
 // =========== STATE ===========
 let cart = [];
-const WHATSAPP_NUMBER = '5511999999999'; // ← ALTERE para seu número
+const WHATSAPP_NUMBER = '5511991586470'; // ← Seu número atualizado
 
 // =========== VARIÁVEIS DE FIDELIDADE ===========
 window.currentDiscountVal = 0;
@@ -819,7 +819,7 @@ function maskCEP(el) {
   if (v.length > 8) v = v.slice(0, 8);
   if (v.length > 5) v = v.slice(0,5) + '-' + v.slice(5);
   el.value = v;
-  if(v.length === 9) fetchCEP(v); // Busca automática ao completar 9 digitos
+  if(v.length === 9) fetchCEP(v); 
 }
 
 function fetchCEP(cepStr) {
@@ -890,7 +890,7 @@ function sendWhatsApp() {
   saveOrderToKitchen(name, phone, address, obs);
 
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
-  window.open(url, '_blank');
+  window.location.href = url; // Garante o redirecionamento no mobile sem bloqueio de pop-up
 }
 
 function maskPhone(el) {
